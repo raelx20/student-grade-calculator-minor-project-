@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+        <div class="results-card">
+            <div class="result-item">
+                <h3>Predicted Score</h3>
+                <p class="big-number">{{ predictions.predicted_score }}</p>
+            </div>
+            <div class="result-item">
+                <h3>Grade</h3>
+                <p class="big-number">{{ predictions.grade }}</p>
+            </div>
+            <div class="result-item">
+                <h3>Status</h3>
+                <p class="big-number">{{ predictions.pass_fail }}</p>
+            </div>
+        </div>
+        {% if recommendations %}
+            <h2>Recommendations</h2>
+            <ul class="recommendations">
+            {% for rec in recommendations %}
+                <li class="priority-{{ rec.priority }}">
+                    <strong>{{ rec.area }}</strong>: {{ rec.message }}
+                    <span class="badge">{{ rec.priority }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="/" class="btn">Make Another Prediction</a>
+    </div>
+</body>
+</html>

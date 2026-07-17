@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Academic Performance Dashboard</h1>
+        <div class="dashboard-grid">
+            <div class="dash-card">
+                <h3>Model Status</h3>
+                <p>Score Model: Loaded</p>
+                <p>Pass Model: Loaded</p>
+            </div>
+            <div class="dash-card">
+                <h3>Quick Actions</h3>
+                <a class="btn" href="/">New Prediction</a>
+                <a class="btn" href="/health">Health Check</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
